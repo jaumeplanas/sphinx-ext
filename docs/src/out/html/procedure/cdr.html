@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Importar CDR &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="prev" title="Generar facturas" href="factura.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="factura.html" title="Previous document">Generar facturas</a>
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="importar-cdr">
+<span id="procedure-cdr"></span><h1>Importar CDR<a class="headerlink" href="#importar-cdr" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Habitualmente, la importación de ficheros CDR se realiza mediante un
+<a class="reference internal" href="../master/llamadas.html#llamadas-cdr"><span class="std std-ref">proceso</span></a> que se ejecuta en segundo plano, denominado <em>cron</em>.</p>
+<p>No obstante, a veces puede ser necesario importar ficheros CDR concretos,
+ya sea por su no disponibilidad en los servidores de los proveedores,
+fallos del sistema o cualquier otro motivo.</p>
+<p><strong>EWAN-ISP</strong> incluye un asistente que permite importar un fichero CDR a la vez.</p>
+<p>Haga clic en el menú <strong class="rst_xmenu">ISP » Asistentes » Importar CDR</strong>.</p>
+<a class="reference internal image-reference" href="../_images/proc_cdr_01.png"><img alt="../_images/proc_cdr_01.png" class="align-center" src="../_images/proc_cdr_01.png" style="width: 80%;" /></a>
+<dl class="docutils">
+<dt><code class="rst_xgui docutils literal notranslate"><span class="pre">Suba</span> <span class="pre">su</span> <span class="pre">archivo</span></code></dt><dd>Seleccione un fichero CDR existente en el sistema de archivos local.</dd>
+<dt><code class="rst_xgui docutils literal notranslate"><span class="pre">Perfil</span></code></dt><dd>Seleccione un <a class="reference internal" href="../master/llamadas.html#llamadas-perfiles"><span class="std std-ref">perfil de importación</span></a> existente.</dd>
+</dl>
+<p>Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Importar</span> <span class="pre">CDR</span></code>.</p>
+<p>Se importará el fichero y se crearán las llamadas en la base de datos.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Este proceso no actualiza el campo <code class="rst_xgui docutils literal notranslate"><span class="pre">Último</span> <span class="pre">CDR</span> <span class="pre">leído</span></code> de los perfiles de importación.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Este proceso no detectará si las llamadas ya se han importado con anterioridad.
+Debe asegurarse de que no existen o probablemente se duplicarán llamadas.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procedimientos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="initial.html">Configuración inicial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rate.html">Importar / exportar tarifas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus.html">Zonas y Bonos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Creación de contratos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recurso.html">Añadir recurso a un contrato</a></li>
+<li class="toctree-l2"><a class="reference internal" href="factura.html">Generar facturas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Importar CDR</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="factura.html" title="Previous document">Generar facturas</a>
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

@@ -1,0 +1,233 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Generar facturas &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Importar CDR" href="cdr.html" />
+    <link rel="prev" title="Añadir recurso a un contrato" href="recurso.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="recurso.html" title="Previous document">Añadir recurso a un contrato</a>
+        </li>
+        <li>
+          <a href="cdr.html" title="Next document">Importar CDR</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="generar-facturas">
+<span id="procedure-factura"></span><h1>Generar facturas<a class="headerlink" href="#generar-facturas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La generación de facturas de contratos ISP puede realizarse:</p>
+<ul class="simple">
+<li>Mediante un proceso automático que se ejecuta en segundo plano.
+Por defecto, este proceso está desactivado.
+La facturación se realiza una vez al mes; el día del mes se configura
+en las opciones estándar de Odoo referentes a los procesos <em>cron</em>.</li>
+<li>Mediante un asistente que se ejecuta de forma manual.</li>
+</ul>
+<p>El proceso de facturación de contratos busca todas las líneas de contrato activas cuyo
+campo <code class="rst_xgui docutils literal notranslate"><span class="pre">Fecha</span> <span class="pre">próxima</span> <span class="pre">factura</span></code> esté comprendido en el intervalo de fechas dado.
+A continuación agrupa las líneas de contrato por contrato y genera una factura por cada contrato.</p>
+<div class="section" id="facturacion-manual">
+<span id="procedure-factura-manual"></span><h2>Facturación manual<a class="headerlink" href="#facturacion-manual" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para realizar una facturación manual, haga clic en el menú <strong class="rst_xmenu">ISP » Asistentes » Generar Facturas</strong>.</p>
+<a class="reference internal image-reference" href="../_images/proc_invoice_01.png"><img alt="../_images/proc_invoice_01.png" class="align-center" src="../_images/proc_invoice_01.png" style="width: 80%;" /></a>
+<p>El significado de los campos es el siguiente:</p>
+<dl class="docutils">
+<dt>Perfil Facturación</dt><dd>Seleccione uno de los <a class="reference internal" href="#procedure-factura-perfil"><span class="std std-ref">perfiles de facturación</span></a> existentes.
+Al seleccionar un perfil, se llenan los campos por defecto definidos en dicho perfil.</dd>
+<dt>Fecha</dt><dd>Especifique una fecha. Para el asistente de importación solamente tiene
+interés el mes y el año de esa fecha: a partir del mes y el año, construirá
+el intervalo de fechas entre el primer día y el último día del mes y año especificados.</dd>
+<dt>Día de facturación</dt><dd>Día del mes que tendrá la fecha de factura, en lugar del primer día de mes
+que toma por defecto.</dd>
+<dt>Utilizar cola de trabajos</dt><dd>Si se marca, la generación de facturas se realizará mediante el módulos
+de colas asíncronas de trabajos de Odoo (una factura por trabajo) que se
+ejecuta en segundo plano y permite liberar la interfaz de usuario.</dd>
+<dt>Encolar fecha</dt><dd>Este campo solo se muestra si se marca el campo <code class="rst_xgui docutils literal notranslate"><span class="pre">Utilizar</span> <span class="pre">cola</span> <span class="pre">de</span> <span class="pre">trabajos</span></code>.
+Indica la fecha y hora a partir de la cual se ejecutarán los procesos encolados.
+Un valor en blanco significa <em>inmediatamente</em>.</dd>
+<dt>Tipo de contrato</dt><dd>(Opcional) Especifique un <a class="reference internal" href="../master/contrato.html#contrato-tipo"><span class="std std-ref">tipo de contrato</span></a>, si desea
+restringir la generación de facturas a un tipo de contrato determinado.</dd>
+<dt>Empresa</dt><dd>(Opcional) Especifique una Empresa o cliente, si desea restringir la
+generación de facturas a un cliente concreto.</dd>
+<dt>Contrato</dt><dd>(Opcional) Especifique si desea restringir la facturación a un contrato
+determinado.</dd>
+<dt>Comercial</dt><dd>(Opcional) Especifique si desea restringir la facturación a los contratos
+con un Comercial determinado.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En los campos indicados como opcionales, un valor en blanco se considera
+que son <em>todos</em>.</p>
+</div>
+<p>Una vez haya especificado las opciones deseadas, haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Generar</span> <span class="pre">Facturas</span></code>.</p>
+</div>
+<div class="section" id="automatizacion">
+<span id="procedure-factura-cron"></span><h2>Automatización<a class="headerlink" href="#automatizacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La generación de facturas mediante procesos de ejecución en segundo plano (<em>cron</em>)
+sigue el mismo procedimiento que la generación manual, pero al omitirse
+la petición de opciones mediante un asistente, algunos valores los toma
+del perfil de facturación. Estos valores son:</p>
+<ul class="simple">
+<li>Día de facturación</li>
+<li>Tipo de contrato</li>
+<li>Empresa</li>
+<li>Comercial</li>
+</ul>
+<p>Los demás campos se definen del siguiente modo:</p>
+<ul class="simple">
+<li><code class="rst_xgui docutils literal notranslate"><span class="pre">Utilizar</span> <span class="pre">cola</span> <span class="pre">de</span> <span class="pre">trabajos</span></code>: <strong>sí</strong></li>
+<li><code class="rst_xgui docutils literal notranslate"><span class="pre">Encolar</span> <span class="pre">fecha</span></code>: <strong>inmediatamente</strong> (en blanco)</li>
+</ul>
+</div>
+<div class="section" id="perfiles-de-facturacion">
+<span id="procedure-factura-perfil"></span><h2>Perfiles de facturación<a class="headerlink" href="#perfiles-de-facturacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Permite definir distintos perfiles de facturación.
+Estos perfiles se utilizan en la generación de facturas:</p>
+<ul class="simple">
+<li>La generación automática seleccionará siempre el primer perfil activo de la lista</li>
+<li>En la generación manual podrá seleccionarse cualquier perfil definido para
+incorporar sus valores por defecto.</li>
+</ul>
+<p>En los perfiles de facturación se definen los siguientes campos:</p>
+<dl class="docutils">
+<dt>Día de facturación</dt><dd>Día del mes que se utilizará para la fecha de las facturas generadas.</dd>
+<dt>Tipo de contrato</dt><dd>Tipo de contrato al cual se restringirá la generación de facturas.</dd>
+<dt>Empresa</dt><dd>Empresa o cliente de contrato al cual se restringirá la generación de facturas.</dd>
+<dt>Comercial</dt><dd>Comercial de contrato al cual se restringirá la generación de facturas.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procedimientos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="initial.html">Configuración inicial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rate.html">Importar / exportar tarifas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus.html">Zonas y Bonos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Creación de contratos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recurso.html">Añadir recurso a un contrato</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Generar facturas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#facturacion-manual">Facturación manual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatizacion">Automatización</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perfiles-de-facturacion">Perfiles de facturación</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cdr.html">Importar CDR</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="recurso.html" title="Previous document">Añadir recurso a un contrato</a>
+        </li>
+        <li>
+          <a href="cdr.html" title="Next document">Importar CDR</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

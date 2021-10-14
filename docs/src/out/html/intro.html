@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Visión general &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Modelos de datos" href="master/index.html" />
+    <link rel="prev" title="Documentación EWAN ISP" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Documentación EWAN ISP</a>
+        </li>
+        <li>
+          <a href="master/index.html" title="Next document">Modelos de datos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">EWAN ISP</a></li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vision-general">
+<h1>Visión general<a class="headerlink" href="#vision-general" title="Enlazar permanentemente con este título">¶</a></h1>
+<p><strong>EWAN ISP</strong> es un vertical de Odoo para la gestión de ISPs locales.
+La aplicación gestiona los siguientes aspectos:</p>
+<dl class="docutils">
+<dt>Contratos</dt><dd><p>La gestión gira alrededor del concepto de <strong>Contrato</strong>.
+Un Contrato puede incluir:</p>
+<ul class="simple">
+<li>Uno o varios Puntos de entrega,</li>
+<li>Líneas de contrato con facturación recurrente,</li>
+<li>Cargos puntuales,</li>
+<li>Recursos asociados a cada Punto de entrega
+(un recurso puede ser, por ejemplo, una instalación de fibra,
+teléfonos fijos o teléfonos móviles)</li>
+<li>Facturación mensual de los cargos recurrentes,
+cargos puntuales y consumos telefónicos.</li>
+</ul>
+</dd>
+<dt>Tarifas y bonos</dt><dd><ul class="simple">
+<li>Gestión de archivos CDR para la importación de llamadas realizadas</li>
+<li>Soporte para definir varias tarifas, con relaciones padre / hijo.</li>
+<li>Soporte para la definición de bonos mensuales, es decir,
+número de minutos mensuales sin coste, por cada teléfono contratado.</li>
+</ul>
+</dd>
+<dt>Llamadas y Archivos CDR</dt><dd><ul class="simple">
+<li>Lectura de ficheros CDR para su importación.
+Incluye módulos para varias operadoras del mercado, que permiten
+leer dichos archivos directamente desde sus servidores FTP.</li>
+<li>Validación y cálculo de precios lista de las llamadas importadas.</li>
+<li>Soporte para llamadas 900 Entrantes.</li>
+<li>Soporte para consumo de datos y mensajes SMS de móviles.</li>
+</ul>
+</dd>
+</dl>
+<p>A nivell general, el diagrama de clases o entidades es el siguiente.
+El diagrama es parcial, no se muestran todas las relaciones.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-f5f89952d823792aa281a1d0e471c3f6cf87e44d.png" alt="&#64;startuml
+&quot;Contract Type&quot; -right-|&gt; Contract
+&quot;Contract Agreement&quot; -left-|&gt; Contract
+Contract -down-|&gt; &quot;Delivery Point&quot;
+&quot;Delivery Point&quot; -down-|&gt; &quot;Contract Line&quot;
+&quot;Delivery Point&quot; -down-|&gt; &quot;Contract Once&quot;
+&quot;Contract Line Audit&quot; -left-&gt; &quot;Contract Line&quot;
+&quot;Contract Line&quot; -down-|&gt; Resource
+&quot;Contract Line Invoice&quot; -right-|&gt; &quot;Contract Line&quot;
+&quot;Resource Site Line Audit&quot; -right-|&gt; Resource
+&quot;Resource Rate Audit&quot; -left-|&gt; Resource
+Rate -up-|&gt; Resource
+Prefix -right-|&gt; Rate
+Zone -right-|&gt; Prefix
+Rate -right-|&gt; Call
+&quot;Call Import&quot; -left-|&gt; Call
+&quot;Import Profile&quot; -left-|&gt; &quot;Call Import&quot;
+
+class Contract {
+   ewan.isp.contract
+}
+class &quot;Contract Type&quot; {
+   ewan.isp.contract.type
+}
+class &quot;Contract Agreement&quot; {
+   ewan.isp.contract.agreement
+}
+class &quot;Delivery Point&quot; {
+   ewan.isp.site
+}
+class &quot;Contract Line&quot; {
+   ewan.isp.site.line
+}
+class &quot;Contract Once&quot; {
+   ewan.isp.site.once
+}
+class &quot;Contract Line Audit&quot; {
+   ewan.isp.site.line.site
+}
+class &quot;Contract Line Invoice&quot; {
+   ewan.isp.site.line.invoice
+}
+class Resource {
+   ewan.isp.resource
+}
+class &quot;Resource Site Line Audit&quot; {
+   ewan.isp.resource.site.line
+}
+class &quot;Resource Rate Audit&quot; {
+   ewan.isp.resource.rate.line
+}
+class Rate {
+   ewan.isp.rate
+}
+class Prefix {
+   ewan.isp.prefix
+}
+class Zone {
+   ewan.isp.zone
+}
+class Call {
+   ewan.isp.call
+}
+class &quot;Call Import&quot; {
+   ewan.isp.call.import
+}
+class &quot;Import Profile&quot; {
+   ewan.isp.profile
+}
+&#64;enduml"/>
+</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config/index.html">Configuración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="procedure/index.html">Procedimientos</a></li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Documentación EWAN ISP</a>
+        </li>
+        <li>
+          <a href="master/index.html" title="Next document">Modelos de datos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="index.html">EWAN ISP</a></li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Llamadas &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Prefijos, Tarifas, Bonos" href="tarifa.html" />
+    <link rel="prev" title="Contratos" href="contrato.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="contrato.html" title="Previous document">Contratos</a>
+        </li>
+        <li>
+          <a href="tarifa.html" title="Next document">Prefijos, Tarifas, Bonos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="llamadas">
+<h1>Llamadas<a class="headerlink" href="#llamadas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La gestión de las llamadas efectuadas se basa en los siguientes modelos:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#llamadas-llamadas"><span class="std std-ref">Llamadas</span></a></li>
+<li><a class="reference internal" href="#llamadas-ficheros"><span class="std std-ref">Ficheros de llamadas importadas</span></a></li>
+<li><a class="reference internal" href="#llamadas-perfiles"><span class="std std-ref">Perfiles de importación</span></a></li>
+<li><a class="reference internal" href="#llamadas-cdr"><span class="std std-ref">Ficheros CDR</span></a></li>
+</ul>
+<div class="section" id="llamadas-llamadas">
+<span id="id1"></span><h2>Llamadas<a class="headerlink" href="#llamadas-llamadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las llamadas se leen o se importan desde ficheros de texto CDR que proporcionan
+las operadoras.</p>
+<p>En la tabla de <cite>Llamadas</cite> se almacena la siguiente información:</p>
+<dl class="docutils">
+<dt>Fecha y hora de la llamada</dt><dd>Fecha y hora en la que se ha iniciado la llamada.
+Internamente se guarda en hora <strong>TU (Tiempo Universal)</strong>.</dd>
+<dt>Teléfono</dt><dd>Número de teléfono que ha originado la llamada.
+Debería ser un número perteneciente a un contrato.</dd>
+<dt>Número llamado</dt><dd>Número al que se ha llamado.</dd>
+<dt>Duración de la llamada</dt><dd>Segundos que ha durado la llamada telefónica.
+No aplicable si la llamada no es de voz.</dd>
+<dt>Datos de la llamada</dt><dd>Volumen de datos consumidos. Solo aplicable en las llamadas de tipo Datos.</dd>
+<dt>Interna</dt><dd>Indica que la llamada es interna o de pruebas, es decir, no facturable.</dd>
+<dt>Es entre contratos</dt><dd>Indica si la llamada se ha efectuado entre dos teléfonos fijos contratados.</dd>
+<dt>Tipo</dt><dd><p>Tipo de llamada. Normalmente, el tipo se determina en el momento de validar la llamada.
+Puede ser uno de los siguientes:</p>
+<ul class="simple">
+<li>Nacional fijo</li>
+<li>Nacional móvil</li>
+<li>Internacional</li>
+<li>900 entrante</li>
+<li>Red inteligente</li>
+<li>SMS</li>
+<li>Datos</li>
+</ul>
+</dd>
+<dt>Tipo CDR</dt><dd><p>Tipo de registro del CDR original. Puede ser uno de los siguientes:</p>
+<ul class="simple">
+<li>VOZ</li>
+<li>DATOS</li>
+<li>SMS</li>
+</ul>
+</dd>
+<dt>Registros</dt><dd>Registro del resultado de las diferentes validaciones.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>La aplicación utiliza la recomendación E.164 para el formato de números de teléfono,
+es decir, un signo <cite>+</cite>, seguido del código de país y del número local, sin espacios ni signos de puntuación.</p>
+<p class="last">Por ejemplo: <cite>+34931234567</cite></p>
+</div>
+<div class="section" id="validacion-de-llamadas">
+<span id="llamadas-validacion"></span><h3>Validación de llamadas<a class="headerlink" href="#validacion-de-llamadas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La importación de llamadas marca su tipo como <cite>Desconocido</cite>, a no ser que
+el CDR lo establezca en un valor concreto.</p>
+<p>Una vez importadas las llamadas, se procede a su validación.
+La validación sigue los siguientes pasos:</p>
+<ul class="simple">
+<li>A partir del <cite>Teléfono</cite>, se busca el correspondiente <a class="reference internal" href="contrato.html#contrato-recurso"><span class="std std-ref">recurso</span></a> y,
+a partir de éste, se encuentra el <a class="reference internal" href="contrato.html#contrato-contrato"><span class="std std-ref">contrato</span></a>.
+A partir del recurso se conocerá también la <a class="reference internal" href="tarifa.html#tarifa-tarifa"><span class="std std-ref">Tarifa</span></a> a aplicar.</li>
+<li>A partir del <cite>Número llamado</cite>, se busca el <a class="reference internal" href="tarifa.html#tarifa-prefijo"><span class="std std-ref">prefijo</span></a> y elemento de tarifa.
+Si se encuentran, a partir del prefijo se conoce el tipo de llamada y
+a partir del elemento de tarifa se conoce su precio lista, antes de <a class="reference internal" href="tarifa.html#tarifa-bono"><span class="std std-ref">bonificación</span></a>.</li>
+<li>En este momento, la llamada se considera válida, aunque se procede a una nueva búsqueda,
+esta vez a partir del <a class="reference internal" href="#llamadas-perfiles"><span class="std std-ref">perfil de importación</span></a>, que determina una tarifa de <em>Compra</em>,
+para conocer en este caso el <em>coste</em> de la llamada.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ficheros-de-llamadas-importadas">
+<span id="llamadas-ficheros"></span><h2>Ficheros de llamadas importadas<a class="headerlink" href="#ficheros-de-llamadas-importadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La importación de ficheros CDR se realiza mediante el uso de <a class="reference internal" href="#llamadas-perfiles"><span class="std std-ref">Perfiles de importación</span></a>.
+Los campos más importantes son los siguientes:</p>
+<dl class="docutils">
+<dt>Nombre</dt><dd>Nombre del registro, normalmente el nombre del fichero importado, aunque puede ser otro más descriptivo.</dd>
+<dt>Fecha</dt><dd>Fecha de importación del fichero. No confundir con las fechas de las llamadas.</dd>
+<dt>Perfil</dt><dd><a class="reference internal" href="#llamadas-perfiles"><span class="std std-ref">Perfil</span></a> utilizado para la importación.</dd>
+<dt>Válido</dt><dd>Verdadero si todas las llamadas que contiene són válidas.</dd>
+<dt>Número de llamadas</dt><dd>Indica el número de llamadas que contiene esta importación.</dd>
+<dt>Número de llamadas incorrectas</dt><dd>Indica el número de llamadas no válidas.</dd>
+</dl>
+</div>
+<div class="section" id="perfiles-de-importacion">
+<span id="llamadas-perfiles"></span><h2>Perfiles de importación<a class="headerlink" href="#perfiles-de-importacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los perfiles de importación definen las características que se utilizarán para importar <a class="reference internal" href="#llamadas-cdr"><span class="std std-ref">archivos CDR</span></a>.
+Los campos más importantes son:</p>
+<dl class="docutils">
+<dt>Nombre</dt><dd>Nombre del perfil.</dd>
+<dt>Tarifa</dt><dd>Tarifa de compra que se utilizará para calcular el coste de las llamadas importadas mediante este perfil.</dd>
+<dt>Empresa</dt><dd>Proveedor de los ficheros CDR.</dd>
+<dt>Modelo</dt><dd>Módulo de importación a utilizar.
+La aplicación incluye módulos de importación para diferentes operadoras.
+Es posible crear nuevos módulos (requiere programación) para otros operadores.</dd>
+<dt>Tipo de descarga</dt><dd><p>Método de acceso a los ficheros CDR:</p>
+<ul class="simple">
+<li>FTP (o sFTP), requiere credenciales.</li>
+<li>Otro, normalmente se utiliza un directorio local.</li>
+</ul>
+</dd>
+<dt>Nombre corto</dt><dd>Nombre que los distintos módulos pueden utilizar para fines propios.
+Normalmente se utiliza como subdirectorio para separar y clasificar ficheros CDR en el sistema de archivos.
+Su uso depende del módulo.</dd>
+<dt>Último CDR leído</dt><dd>Nombre, código o identificador que utiliza el módulo para saber
+el último CDR leído y no volver a importar los anteriores.</dd>
+<dt>Activo</dt><dd>El proceso periódico de importación de ficheros CDR que se ejecuta en segundo plano
+solamente utilizará los perfiles que estén activos.</dd>
+</dl>
+</div>
+<div class="section" id="ficheros-cdr">
+<span id="llamadas-cdr"></span><h2>Ficheros CDR<a class="headerlink" href="#ficheros-cdr" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los ficheros CDR contienen registros de llamadas que proporcionan los operadores.
+Habitualmente son ficheros CSV y contienen pocos datos. Los más básicos son:</p>
+<ul class="simple">
+<li>Fecha y hora</li>
+<li>Teléfono origen</li>
+<li>Teléfono destino</li>
+<li>Duración de la llamada</li>
+<li>Volumen de atos consumidos</li>
+<li>Tipo de registro: VOZ, DATOS, SMS</li>
+</ul>
+<p>Estos ficheros no se guardan en la base de datos; simplemente se <em>consumen</em>.
+Se leen siguiendo las instrucciones del módulo de importación,
+se crean registros de llamadas en la base de datos y se eliminan para no ocupar espacio inútil.</p>
+<p>La lectura de ficheros CDR se realiza mediante un proceso periódico en segundo plano
+que recorre los perfiles de importación activos y los utiliza para leer registros CDR
+y crear registros de llamadas en la base de datos.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modelos de datos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Contratos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Llamadas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#llamadas-llamadas">Llamadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ficheros-de-llamadas-importadas">Ficheros de llamadas importadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perfiles-de-importacion">Perfiles de importación</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ficheros-cdr">Ficheros CDR</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tarifa.html">Prefijos, Tarifas, Bonos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedure/index.html">Procedimientos</a></li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="contrato.html" title="Previous document">Contratos</a>
+        </li>
+        <li>
+          <a href="tarifa.html" title="Next document">Prefijos, Tarifas, Bonos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

@@ -1,0 +1,284 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Añadir recurso a un contrato &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Generar facturas" href="factura.html" />
+    <link rel="prev" title="Creación de contratos" href="contrato.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="contrato.html" title="Previous document">Creación de contratos</a>
+        </li>
+        <li>
+          <a href="factura.html" title="Next document">Generar facturas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anadir-recurso-a-un-contrato">
+<span id="procedure-recurso"></span><h1>Añadir recurso a un contrato<a class="headerlink" href="#anadir-recurso-a-un-contrato" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Habitualmente, añadir una línea fija, un móvil, una fibra o un bono a un contrato
+implica dos pasos:</p>
+<ul class="simple">
+<li>Crear una <a class="reference internal" href="../master/contrato.html#contrato-linea"><span class="std std-ref">línea de contrato</span></a>, donde se definen los términos de la facturación periódica.</li>
+<li>Crear un <a class="reference internal" href="../master/contrato.html#contrato-recurso"><span class="std std-ref">recurso</span></a>, donde se especifican el número de teléfono, tarifas, bonos, etc.</li>
+</ul>
+<p>Estos asistentes facilitan la creación de estos dos pasos.</p>
+<p>Si lo que desea es añadir un recurso <strong>sin crear</strong> una línea de contrato, es decir,
+añadirlo a una línea de contrato existente, siga el procedimiento <a class="reference internal" href="#procedure-recurso-sin"><span class="std std-ref">Añadir recurso sin crear línea de contrato</span></a>.</p>
+<p>En la pantalla de Contrato:</p>
+<a class="reference internal image-reference" href="../_images/proc_resource_01.png"><img alt="../_images/proc_resource_01.png" class="align-center" src="../_images/proc_resource_01.png" style="width: 80%;" /></a>
+<p>pueden verse los botones para crear distintos recursos:</p>
+<img alt="../_images/proc_resource_02.png" class="align-center" src="../_images/proc_resource_02.png" />
+<p>Haga clic en el botón del recurso que desee añadir.</p>
+<div class="section" id="anadir-fibra">
+<h2><em class="fa fa-chain"></em>&nbsp;Añadir Fibra<a class="headerlink" href="#anadir-fibra" title="Enlazar permanentemente con este título">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/proc_resource_fiber.png"><img alt="../_images/proc_resource_fiber.png" class="align-center" src="../_images/proc_resource_fiber.png" style="width: 80%;" /></a>
+<p>Seleccione o especifique los siguientes campos:</p>
+<dl class="docutils">
+<dt>Punto de Entrega</dt><dd>Seleccione el punto de entrega al que desea asociar este recurso.</dd>
+<dt>Producto</dt><dd>Seleccione el producto que el cliente desea contratar. Solamente se muestran
+productos de tipo <cite>Fibra</cite>.</dd>
+<dt>Fecha de inicio</dt><dd>Indique la fecha de alta del servicio. Por defecto es la fecha de alta del contrato.</dd>
+<dt>Nombre/número</dt><dd>Especifique un nombre para la instalación de fibra. Por ejemplo, <em>Hogar</em> u <em>Oficina</em>.
+Aunque en la ficha del recurso ya exista un campo para ello, puede especificar
+un número de serie o cualquier otro dato técnico que facilite su identificación.</dd>
+<dt>Opciones de pago y recurrencia</dt><dd>Los valores mostrados son los valores por defecto especificados en la ficha de producto.</dd>
+<dt>Promoción</dt><dd>Si está sujeto a promoción, especifique las condiciones.</dd>
+</dl>
+</div>
+<div class="section" id="anadir-movil">
+<h2><em class="fa fa-mobile"></em>&nbsp;Añadir Móvil<a class="headerlink" href="#anadir-movil" title="Enlazar permanentemente con este título">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/proc_resource_mobile.png"><img alt="../_images/proc_resource_mobile.png" class="align-center" src="../_images/proc_resource_mobile.png" style="width: 80%;" /></a>
+<p>Seleccione o especifique los siguientes campos:</p>
+<dl class="docutils">
+<dt>Punto de Entrega</dt><dd>Seleccione el punto de entrega al que desea asociar este recurso.</dd>
+<dt>Producto</dt><dd>Seleccione el producto que el cliente desea contratar. Solamente se muestran
+productos de tipo <cite>Móvil</cite>.</dd>
+<dt>Fecha de inicio</dt><dd>Indique la fecha de alta del servicio. Por defecto es la fecha de alta del contrato.</dd>
+<dt>Nombre/número</dt><dd>Especifique el número de teléfono (o un texto preliminar si aún no se conoce).
+Debe utilizarse la recomendación <strong>E.176</strong>, es decir, un signo <cite>+</cite> seguido
+del código internacional y del número local, sin espacios ni signos de puntuación.</dd>
+<dt>Tarifa</dt><dd>Especifique la <a class="reference internal" href="../master/tarifa.html#tarifa-tarifa"><span class="std std-ref">tarifa de ventas</span></a> que se aplicará a las llamadas efectuadas por este recurso.</dd>
+<dt>Bonos</dt><dd><p>Especifique los posibles <a class="reference internal" href="../master/tarifa.html#tarifa-bono"><span class="std std-ref">bonos</span></a> que desee aplicar a este recursos</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Tal como se indica en la pantalla, los bonos que se definan aquí
+<strong>no crearán</strong> una línea de contrato asociada ni, en consecuencia,
+cargos mensuales. Estos bonos están pensados solamente para bonos
+sin cargo y sin facturación periódica mensual.</p>
+</div>
+</dd>
+<dt>Opciones de pago y recurrencia</dt><dd>Los valores mostrados son los valores por defecto especificados en la ficha de producto.</dd>
+<dt>Promoción</dt><dd>Si está sujeto a promoción, especifique las condiciones.</dd>
+</dl>
+</div>
+<div class="section" id="anadir-telefono-fijo">
+<h2><em class="fa fa-phone"></em>&nbsp;Añadir Teléfono Fijo<a class="headerlink" href="#anadir-telefono-fijo" title="Enlazar permanentemente con este título">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/proc_resource_land.png"><img alt="../_images/proc_resource_land.png" class="align-center" src="../_images/proc_resource_land.png" style="width: 80%;" /></a>
+<p>Seleccione o especifique los siguientes campos:</p>
+<dl class="docutils">
+<dt>Punto de Entrega</dt><dd>Seleccione el punto de entrega al que desea asociar este recurso.</dd>
+<dt>Producto</dt><dd>Seleccione el producto que el cliente desea contratar. Solamente se muestran
+productos de tipo <cite>Línea fija</cite>.</dd>
+<dt>Fecha de inicio</dt><dd>Indique la fecha de alta del servicio. Por defecto es la fecha de alta del contrato.</dd>
+<dt>Nombre/número</dt><dd>Especifique el número de teléfono (o un texto preliminar si aún no se conoce).
+Debe utilizarse la recomendación <strong>E.176</strong>, es decir, un signo <cite>+</cite> seguido
+del código internacional y del número local, sin espacios ni signos de puntuación.</dd>
+<dt>Tarifa</dt><dd>Especifique la <a class="reference internal" href="../master/tarifa.html#tarifa-tarifa"><span class="std std-ref">tarifa de ventas</span></a> que se aplicará a las llamadas efectuadas por este recurso.</dd>
+<dt>Bonos</dt><dd><p>Especifique los posibles <a class="reference internal" href="../master/tarifa.html#tarifa-bono"><span class="std std-ref">bonos</span></a> que desee aplicar a este recursos</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Tal como se indica en la pantalla, los bonos que se definan aquí
+<strong>no crearán</strong> una línea de contrato asociada ni, en consecuencia,
+cargos mensuales. Estos bonos están pensados solamente para bonos
+sin cargo y sin facturación periódica mensual.</p>
+</div>
+</dd>
+<dt>Opciones de pago y recurrencia</dt><dd>Los valores mostrados son los valores por defecto especificados en la ficha de producto.</dd>
+<dt>Promoción</dt><dd>Si está sujeto a promoción, especifique las condiciones.</dd>
+</dl>
+</div>
+<div class="section" id="anadir-bono">
+<h2><em class="fa fa-money"></em>&nbsp;Añadir Bono<a class="headerlink" href="#anadir-bono" title="Enlazar permanentemente con este título">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/proc_resource_bonus.png"><img alt="../_images/proc_resource_bonus.png" class="align-center" src="../_images/proc_resource_bonus.png" style="width: 80%;" /></a>
+<p>Seleccione o especifique los siguientes campos:</p>
+<dl class="docutils">
+<dt>Punto de Entrega</dt><dd>Seleccione el punto de entrega al que desea asociar este recurso.</dd>
+<dt>Producto</dt><dd>Seleccione el producto que el cliente desea contratar. Solamente se muestran
+productos de tipo <cite>Línea fija</cite>.</dd>
+<dt>Fecha de inicio</dt><dd>Indique la fecha de alta del servicio. Por defecto es la fecha de alta del contrato.</dd>
+<dt>Recurso</dt><dd>Especifique el recurso (móvil o fijo existente en el contrato) al que se aplicará el bono.</dd>
+<dt>Opciones de pago y recurrencia</dt><dd>Los valores mostrados son los valores por defecto especificados en la ficha de producto.</dd>
+<dt>Promoción</dt><dd>Si está sujeto a promoción, especifique las condiciones.</dd>
+</dl>
+</div>
+<div class="section" id="anadir-agrupacion">
+<h2><em class="fa fa-asterisk"></em>&nbsp;Añadir agrupación<a class="headerlink" href="#anadir-agrupacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/proc_resource_pool.png"><img alt="../_images/proc_resource_pool.png" class="align-center" src="../_images/proc_resource_pool.png" style="width: 80%;" /></a>
+<p>Seleccione o especifique los siguientes campos:</p>
+<dl class="docutils">
+<dt>Recursos</dt><dd>Especifique la lista de recursos que desea agregar a esta agrupación.
+Solamente podrán elegirse recursos que pertenezcan al contrato y
+que <strong>no tengan asociados algún bono</strong>.</dd>
+<dt>Bonos</dt><dd>Especifique la lista de bonos que se aplicarán al conjunto de recursos definidos en la agrupación.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">En el proceso de creación de una factura, el funcionamiento de estos bonos es similar al
+de los bonos individuales. Se contemplan todas las llamadas efectuadas por los recursos agrupados
+y se aplican los bonos por orden de fecha, no por orden de recurso.</p>
+</div>
+</div>
+<div class="section" id="anadir-recurso-sin-crear-linea-de-contrato">
+<span id="procedure-recurso-sin"></span><h2>Añadir recurso sin crear línea de contrato<a class="headerlink" href="#anadir-recurso-sin-crear-linea-de-contrato" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para añadir un recurso sin crear una línea de contrato, debe asignarlo
+a una línea de contrato existente.</p>
+<p>Seleccione la opción de menú <strong class="rst_xmenu">ISP » Administración » Líneas contrato » Recurrente</strong>.</p>
+<p>Se mostrará una lista de las líneas de contrato existentes.
+Busque la línea donde desea añadir el recurso y selecciónela.
+Edite la ficha:</p>
+<a class="reference internal image-reference" href="../_images/proc_resource_without.png"><img alt="../_images/proc_resource_without.png" class="align-center" src="../_images/proc_resource_without.png" style="width: 80%;" /></a>
+<p>En la parte inferior, en la sección <code class="rst_xgui docutils literal notranslate"><span class="pre">Recursos</span></code>, seleccione si desea:</p>
+<ul class="simple">
+<li>Crear Fibra</li>
+<li>Crear Teléfono Fijo</li>
+<li>Crear Móvil</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procedimientos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="initial.html">Configuración inicial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rate.html">Importar / exportar tarifas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus.html">Zonas y Bonos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Creación de contratos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Añadir recurso a un contrato</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-fibra"><em class="fa fa-chain"></em>&nbsp;Añadir Fibra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-movil"><em class="fa fa-mobile"></em>&nbsp;Añadir Móvil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-telefono-fijo"><em class="fa fa-phone"></em>&nbsp;Añadir Teléfono Fijo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-bono"><em class="fa fa-money"></em>&nbsp;Añadir Bono</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-agrupacion"><em class="fa fa-asterisk"></em>&nbsp;Añadir agrupación</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anadir-recurso-sin-crear-linea-de-contrato">Añadir recurso sin crear línea de contrato</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="factura.html">Generar facturas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdr.html">Importar CDR</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="contrato.html" title="Previous document">Creación de contratos</a>
+        </li>
+        <li>
+          <a href="factura.html" title="Next document">Generar facturas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

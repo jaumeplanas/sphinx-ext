@@ -1,0 +1,315 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Contratos &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Llamadas" href="llamadas.html" />
+    <link rel="prev" title="Modelos de datos" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Modelos de datos</a>
+        </li>
+        <li>
+          <a href="llamadas.html" title="Next document">Llamadas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="contratos">
+<span id="contrato-contrato"></span><h1>Contratos<a class="headerlink" href="#contratos" title="Enlazar permanentemente con este título">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/contrato.png"><img alt="../_images/contrato.png" src="../_images/contrato.png" style="width: 959.22px; height: 570.86px;" /></a>
+<p>En un Contrato se definen los siguientes campos más importantes:</p>
+<dl class="docutils">
+<dt>Empresa</dt><dd>Identifica la persona o entidad jurídica a la que se facturarán los consumos y servicios prestados.</dd>
+<dt><a class="reference internal" href="#contrato-tipo"><span class="std std-ref">Tipo de contrato</span></a></dt><dd>Tipo de contrato que se utilizará.</dd>
+<dt>Fecha de inicio</dt><dd>Fecha de alta del contrato, es un valor obligatorio.</dd>
+<dt>Fecha finalización</dt><dd>Fecha de baja del contrato, puede dejarse en blanco mientras esté activo el contrato.</dd>
+<dt>Comercial</dt><dd>Usuario del sistema que será el contacto comercial para este contrato.</dd>
+<dt>Banco</dt><dd>Banco en el que se efectuará el adeudo de las facturas.</dd>
+<dt>Proyecto</dt><dd>Al crear un contrato, se crea automáticamente un proyecto para poder
+gestionar tareas o incidencias relacionadas con este contrato.
+Es el vínculo para integrar el módulo estándard de Proyectos de Odoo en los contratos ISP.</dd>
+</dl>
+<p>Los contratos tienen un <cite>Estado</cite> (borrador, abierto, final, cancelado).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p>Para que un contrato pueda generar facturas, debe tener el estado <strong>Abierto</strong> o válido.
+Para poder validar un contrato, deben cumplirse ciertas condiciones como:</p>
+<ul class="last simple">
+<li>Tener definido una cuenta bancaria con un mandato SEPA válido.</li>
+<li>Tener definido un proyecto.</li>
+<li>Todos los recursos asociados deben tener el estado <cite>Abierto</cite> o <cite>Cancelado</cite>.</li>
+</ul>
+</div>
+<div class="section" id="puntos-de-entrega">
+<span id="contrato-dp"></span><h2>Puntos de entrega<a class="headerlink" href="#puntos-de-entrega" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un contrato tiene uno o varios <strong>Puntos de entrega</strong>. Un Punto de entrega es básicamente una dirección de instalación.</p>
+</div>
+<div class="section" id="lineas-de-contrato">
+<span id="contrato-linea"></span><h2>Líneas de contrato<a class="headerlink" href="#lineas-de-contrato" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las líneas de contrato son los productos o servicios recurrentes, es decir, que se facturarán periódicamente (cada mes, por ejemplo, o cada año).</p>
+<p>Una línea de contrato depende o está asignada a un <em>Punto de entrega</em>.</p>
+<p id="contrato-puntual">El tipo de línea de contrato más habitual es la recurrente, aunque también pueden definirse líneas <strong>Puntuales</strong>.
+Estas líneas son el equivalente de una línea recurrente con periodicidad <em>Una vez</em>.
+Sirven para definir cargos puntuales a incluir en la siguiente factura emitida.
+Por ejemplo, una ampliación de datos de un móvil, una alta de servicio, devolución de un cargo indebido anterior, etc.</p>
+<p>Cada línea de contrato mantiene un histórico de facturas.</p>
+<div class="section" id="recurrente">
+<h3>Recurrente<a class="headerlink" href="#recurrente" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los campos más importantes de las líneas de contrato recurrentes son los siguientes.</p>
+<dl class="docutils">
+<dt>Punto de entrega</dt><dd>Punto de entrega o dirección de instalación al que pertenece.</dd>
+<dt>Producto</dt><dd><p>Concepto que se factura. Toma del maestro de productos los siguientes campos:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li>Nombre</li>
+<li>Descripción</li>
+</ul>
+</td><td><ul class="simple">
+<li>Precio unitario</li>
+<li>Tipo de pago: Prepago o Postpago</li>
+</ul>
+</td><td><ul class="simple">
+<li>Intervalo</li>
+<li>Unidad de intervalo</li>
+</ul>
+</td></tr></table>
+<p>Estos campos pueden modificarse por cada línea, además de la cantidad y el descuento.
+El <cite>Subtotal</cite> es un campo calculado a partir de la información anterior.</p>
+</dd>
+<dt>Descripción</dt><dd>Descripción de la línea de contrato, que se mostrará en las facturas.</dd>
+<dt>Fecha de inicio</dt><dd>Fecha de alta a partir de la cual puede facturarse esta línea de contrato.</dd>
+<dt>Fecha de finalización</dt><dd>Si se define, no podrá facturarse a partir de dicha fecha.</dd>
+<dt>Activo</dt><dd>Permite detener la facturación de la línea de contrato.
+Solamente se facturan líneas de contrato activas.</dd>
+</dl>
+<p>Además, incluye los siguientes campos informativos que no pueden editarse:</p>
+<dl class="docutils">
+<dt>Fecha última factura</dt><dd>Fecha de la última factura que incluye esta línea de contrato.</dd>
+<dt>Fecha próxima factura</dt><dd>Fecha a partir de la cual vence el período actual y debe facturarse de nuevo.</dd>
+<dt>Última factura desde / hasta</dt><dd>Período facturado en la última factura.</dd>
+</dl>
+<p>Por último, permite definir dos campos para la gestión de promociones:</p>
+<dl class="docutils">
+<dt>Fecha fin promo</dt><dd><p>Fecha hasta la cual se aplicará el descuento de promoción.
+A partir de esta fecha, se aplicará el descuento definido en la línea de contrato.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Esta fecha es <em>absoluta</em>: define una fecha concreta del calendario.
+No es un intervalo, por ejemplo durante 2 meses.</p>
+</div>
+</dd>
+<dt>Descuento promo</dt><dd>Descuento que se aplicará hasta la fecha de finalización de la promoción.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="recursos">
+<span id="contrato-recurso"></span><h2>Recursos<a class="headerlink" href="#recursos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las líneas de contrato tienen <cite>Recursos</cite> asignados. Todos los recursos tienen un <strong>Estado</strong>.
+El Estado puede ser: Borrador, Abierto, Cancelado.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Para poder facturar un contrato, éste tiene que estar en el estado <strong>Abierto</strong> o validado.
+Para poder validar un contrato, todos sus recursos asociados deben tener el estado <strong>Abierto</strong>.</p>
+</div>
+<p>Existen 3 tipos de recursos:</p>
+<dl class="docutils">
+<dt><em class="fa fa-chain"></em>&nbsp;Fibra</dt><dd><p>Despliegue de fibra. Contiene los siguientes campos:</p>
+<ul class="simple">
+<li><strong>Nombre</strong>: por ejemplo, <cite>Hogar</cite> u <cite>Oficina</cite>.</li>
+<li><strong>Número de serie del router</strong></li>
+</ul>
+</dd>
+<dt><em class="fa fa-mobile"></em>&nbsp;Móvil</dt><dd><p>Teléfono móvil. Contiene los siguientes campos:</p>
+<ul class="simple">
+<li><strong>Número</strong>:</li>
+<li><strong>Tarifa</strong>: tarifa que se aplicará a las llamadas realizadas por este móvil.</li>
+<li><strong>Bonos</strong>: bonos que se aplicarán a las llamadas realizadas por este móvil.</li>
+<li><strong>SIM</strong>: campo informativo.</li>
+<li><strong>Número SIM</strong>: campo informativo.</li>
+<li><strong>PUK</strong>: campo informativo.</li>
+</ul>
+</dd>
+<dt><em class="fa fa-phone"></em>&nbsp;Línea fija</dt><dd><p>Teléfono fijo. Contiene los siguientes campos:</p>
+<ul class="simple">
+<li><strong>Número</strong>:</li>
+<li><strong>Tarifa</strong>: tarifa que se aplicará a las llamadas realizadas por este fijo.</li>
+<li><strong>Bonos</strong>: bonos que se aplicarán a las llamadas realizadas por este fijo.</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">A efectos de auditoría, los recursos mantienen un histórico de cambios de titularidad o tarifa.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>La aplicación utiliza la recomendación E.164 para el formato de números de teléfono,
+es decir, un signo <cite>+</cite>, seguido del código de país y del número local.</p>
+<p class="last">Por ejemplo: <cite>+34931234567</cite></p>
+</div>
+</div>
+<div class="section" id="agrupaciones-de-recursos">
+<span id="contrato-recurso-pool"></span><h2>Agrupaciones de recursos<a class="headerlink" href="#agrupaciones-de-recursos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las agrupaciones de recursos permiten agrupar recursos en los cuales se aplicarán bonos comunes.</p>
+<p>En una agrupación se definen los siguientes campos:</p>
+<dl class="docutils">
+<dt>Contrato</dt><dd>Una agrupación depende de un contrato, que define su dominio de recursos susceptibles de ser agrupados.</dd>
+<dt>Recursos</dt><dd>Lista de recursos que incluye una agrupación.</dd>
+<dt>Bonos</dt><dd>Lista de bonos que se aplicarán al conjunto de recursos agrupados.</dd>
+</dl>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p>Los recursos seleccionados en una agrupación no pueden tener asignados bonos propios
+y no podrán seleccionarse en la lista de recursos disponibles.</p>
+<p class="last">Dicho de otro modo, un recurso no puede tener asignados bonos propios si forma parte de una agrupación.
+El sistema no lo permitirá y se emitirá un mensaje de error.</p>
+</div>
+</div>
+<div class="section" id="tipos-de-contrato">
+<span id="contrato-tipo"></span><h2>Tipos de contrato<a class="headerlink" href="#tipos-de-contrato" title="Enlazar permanentemente con este título">¶</a></h2>
+<blockquote>
+<div><p>Un tipo de contrato es una categoría personalizable de contrato,
+que permite su categorización y definición de valores por defecto:</p>
+<ul class="simple">
+<li><strong>Llamadas cruzadas fijo gratis</strong>: Si se marca, las llamadas entre teléfonos fijos que pertenezcan
+ambos a un contrato se facturarán con un coste 0, al entenderse que no saldrán de la centralita.</li>
+<li><strong>Diario</strong>: Diario de ventas a efectos de contabilidad</li>
+<li><strong>Secuencia</strong>: Secuencia de numeración de los contratos. Cada contrato puede tener una secuencia de numeración distinta,
+que se definirá en el tipo de contrato.</li>
+<li><strong>Plazo de pago</strong>: Plazos de pago de las facturas emitidas. Odoo permite definir pagos parciales con fechas distintas.</li>
+<li><strong>Modo de pago</strong>: Los más comunes son Débito directo SEPA, Transferencia, Manual, etc.</li>
+<li><strong>Padre analítico</strong>: Elemento del árbol de cuentas analíticas a partir del cual se crearán las cuentas analíticas (proyectos) de cada contrato.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modelos de datos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Contratos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#puntos-de-entrega">Puntos de entrega</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lineas-de-contrato">Líneas de contrato</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recursos">Recursos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agrupaciones-de-recursos">Agrupaciones de recursos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tipos-de-contrato">Tipos de contrato</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="llamadas.html">Llamadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarifa.html">Prefijos, Tarifas, Bonos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedure/index.html">Procedimientos</a></li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Modelos de datos</a>
+        </li>
+        <li>
+          <a href="llamadas.html" title="Next document">Llamadas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

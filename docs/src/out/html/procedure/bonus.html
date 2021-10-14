@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Zonas y Bonos &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Creación de contratos" href="contrato.html" />
+    <link rel="prev" title="Importar / exportar tarifas" href="rate.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="rate.html" title="Previous document">Importar / exportar tarifas</a>
+        </li>
+        <li>
+          <a href="contrato.html" title="Next document">Creación de contratos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="zonas-y-bonos">
+<span id="proc-bonus"></span><h1>Zonas y Bonos<a class="headerlink" href="#zonas-y-bonos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Cada recurso (<cite>Móvil</cite> o <cite>Fijo</cite>) puede tener asociados uno o varios <strong>Bonos</strong>.
+Los bonos definen un número de destinos distintos, duración de llamadas
+o número de mensajes SMSs que se descontarán de los consumos mensuales.</p>
+<p>Por ejemplo, un bono de 100 minutos de llamadas a móvil nacional implicará
+que, mensualmente, los primeros 100 minutos de llamadas efectuadas por el recurso a
+destinos de móvil nacional serán gratuitos.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p>En esta categoría no se incluyen los denominados <strong>Bonos de Internet</strong> o
+bonos de volumen de datos consumidos.</p>
+<p class="last">En esta aplicación, estos bonos se gestionan mediante líneas de contrato
+con periodicidad mensual, con o sin cargo.</p>
+</div>
+<p>Existen 2 tipos de bonos:</p>
+<ul class="simple">
+<li>Voz</li>
+<li>SMS</li>
+</ul>
+<p>Los bonos de voz no se aplican a todas las llamadas realizadas.
+Para definir a qué tipos de destinos se aplica el bono se utiliza el concepto
+de <strong>Zonas</strong>.</p>
+<p>Las Zonas son agrupaciones de <em>prefijos</em>. Por ejemplo, puede definirse una zona
+que incluya llamadas a fijo nacional (prefijos <cite>+348</cite> y <cite>+349</cite>) o una
+Zona A Internacional, con los prefijos internacionales de ciertos países.</p>
+<div class="section" id="zonas">
+<h2>Zonas<a class="headerlink" href="#zonas" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul>
+<li><p class="first">Seleccione el menú <strong class="rst_xmenu">ISP » Ajustes » Zonas</strong>. Se muestra una lista con las zonas
+definidas.</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_01.png"><img alt="../_images/proc_bonus_01.png" class="align-center" src="../_images/proc_bonus_01.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Crear</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_02.png"><img alt="../_images/proc_bonus_02.png" class="align-center" src="../_images/proc_bonus_02.png" style="width: 80%;" /></a>
+<ul>
+<li><p class="first">Especifique un nombre en <code class="rst_xgui docutils literal notranslate"><span class="pre">Nombre</span></code>.</p>
+</li>
+<li><p class="first">Añada los prefijos. Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Agregar</span> <span class="pre">registro</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_03.png"><img alt="../_images/proc_bonus_03.png" class="align-center" src="../_images/proc_bonus_03.png" style="width: 80%;" /></a>
+<p>Busque y seleccione los prefijos deseados. Puede marcar tantos prefijos como necesite.</p>
+</li>
+<li><p class="first">Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Seleccionar</span></code>.</p>
+</li>
+<li><p class="first">Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Guardar</span></code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bonos">
+<h2>Bonos<a class="headerlink" href="#bonos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los bonos se definen como productos.</p>
+<ul>
+<li><p class="first">Haga clic en el menú <strong class="rst_xmenu">ISP » Ajustes » Productos » Productos</strong>.</p>
+</li>
+<li><p class="first">Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Crear</span></code>.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Tipo</span> <span class="pre">ISP</span></code> seleccione <cite>Bono</cite>.</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_04.png"><img alt="../_images/proc_bonus_04.png" class="align-center" src="../_images/proc_bonus_04.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Nombre</span> <span class="pre">del</span> <span class="pre">producto</span></code> escriba el nombre.</p>
+</li>
+<li><p class="first">Desmarque la opción <code class="rst_xgui docutils literal notranslate"><span class="pre">Puede</span> <span class="pre">ser</span> <span class="pre">comprado</span></code>.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Tipo</span> <span class="pre">de</span> <span class="pre">Bono</span></code>, seleccione <cite>VOZ</cite>. Posteriormente veremos el caso de <cite>SMS</cite>.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Precio</span> <span class="pre">de</span> <span class="pre">venta</span></code>, especifique el precio de lista del bono.</p>
+</li>
+<li><p class="first">En la pestaña <code class="rst_xgui docutils literal notranslate"><span class="pre">Ventas</span></code>, escriba la descripción del producto en <code class="rst_xgui docutils literal notranslate"><span class="pre">Descripción</span> <span class="pre">para</span> <span class="pre">Clientes</span></code>.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Destinaciones</span> <span class="pre">máximas</span></code>, escriba el número máximo de destinaciones a partir del cual
+dejará de aplicarse el bono. Principalmente pensado para usos fraudulentos en locutorios y similares.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Duración</span> <span class="pre">máxima</span></code>, seleccione el número y la unidad de medida.</p>
+</li>
+<li><p class="first">En <code class="rst_xgui docutils literal notranslate"><span class="pre">Tipo</span> <span class="pre">de</span> <span class="pre">pago</span> <span class="pre">ISP</span></code> e <code class="rst_xgui docutils literal notranslate"><span class="pre">Intervalo</span></code>, especifique las opciones de recurrencia.</p>
+</li>
+<li><p class="first">En el apartado <code class="rst_xgui docutils literal notranslate"><span class="pre">Zonas</span></code>, seleccione las zonas a las que se aplicará este bono.</p>
+<ul>
+<li><p class="first">Haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Agregar</span> <span class="pre">registro</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_06.png"><img alt="../_images/proc_bonus_06.png" class="align-center" src="../_images/proc_bonus_06.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Busque y seleccione las zonas deseadas y, a continuación, haga clic en <code class="rst_xgui docutils literal notranslate"><span class="pre">Seleccionar</span></code>.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">Si en lugar de <cite>VOZ</cite> seleccionamos <cite>SMS</cite> en <code class="rst_xgui docutils literal notranslate"><span class="pre">Tipo</span> <span class="pre">de</span> <span class="pre">Bono</span></code>, los campos son los siguientes:</p>
+<a class="reference internal image-reference" href="../_images/proc_bonus_05.png"><img alt="../_images/proc_bonus_05.png" class="align-center" src="../_images/proc_bonus_05.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>Especifique las opciones de recurrencia.</li>
+<li>En <code class="rst_xgui docutils literal notranslate"><span class="pre">Máx.</span> <span class="pre">SMS</span></code>, especifique el número máximo de SMS que no tendrán coste.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procedimientos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="initial.html">Configuración inicial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rate.html">Importar / exportar tarifas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Zonas y Bonos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zonas">Zonas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bonos">Bonos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Creación de contratos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recurso.html">Añadir recurso a un contrato</a></li>
+<li class="toctree-l2"><a class="reference internal" href="factura.html">Generar facturas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdr.html">Importar CDR</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="rate.html" title="Previous document">Importar / exportar tarifas</a>
+        </li>
+        <li>
+          <a href="contrato.html" title="Next document">Creación de contratos</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

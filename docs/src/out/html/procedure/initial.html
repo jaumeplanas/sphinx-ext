@@ -1,0 +1,301 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Configuración inicial &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Importar / exportar tarifas" href="rate.html" />
+    <link rel="prev" title="Procedimientos" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Procedimientos</a>
+        </li>
+        <li>
+          <a href="rate.html" title="Next document">Importar / exportar tarifas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuracion-inicial">
+<span id="procedure-initial"></span><h1>Configuración inicial<a class="headerlink" href="#configuracion-inicial" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Antes de poder realizar operaciones en la aplicación, en primer lugar es
+necesario realizar una configuración inicial.</p>
+<p>A continuación se exponen los pasos necesarios para la configuración inicial,
+a modo de <em>checklist</em> o lista de comprobación.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">No es necesario realizar los pasos en el orden expuesto, aunque se recomienda seguirlo.
+Deberán finalizarse todos ellos para poder trabajar con la aplicación.
+Si alguno de ellos es opcional, se indicará en la explicación.</p>
+</div>
+<p><a class="reference internal" href="../config/settings.html#config-settings"><span class="std std-ref">Ajustes generales de la aplicación</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Ajustes</strong>)</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/proc_initial_01.png"><img alt="../_images/proc_initial_01.png" class="align-center" src="../_images/proc_initial_01.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>(Opcional) Definir un subdiretorio para los ficheros CDR.</li>
+<li>(Opcional) Modificar los productos de facturación de consumos de llamadas
+creados por defecto. Son losproductos que se utilizarán en las líneas de factura
+correspondientes a los consumos telefónicos.</li>
+<li>Activar los módulos de importación de ficheros CDR necesarios.
+Actualmente se han creado los de <strong>Lemonvil</strong> para llamadas de móvil
+y <strong>EveryWAN</strong> para llamadas de fijos.</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><a class="reference internal" href="../master/tarifa.html#tarifa-tarifa"><span class="std std-ref">Tarifas</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Tarifas</strong>)</dt><dd><p>Definir las tarifas tanto de compra como de venta.</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_02.png"><img alt="../_images/proc_initial_02.png" class="align-center" src="../_images/proc_initial_02.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>Definir como mínimo una tarifa de venta completa.</li>
+<li>Definir un proveedor (en el maestro de Empresas) por cada operador que
+suministrará ficheros CDR.</li>
+<li>Definir una tarifa de compra por cada proveedor de ficheros CDR.</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="rate.html#procedure-rate"><span class="std std-ref">Importar Tarifa</span></a> (<strong class="rst_xmenu">ISP » Asistentes » Importar tarifas</strong>)</dt><dd><p>Este asistente sirve tanto para importar como exportar tarifas.
+El proceso habitual es exportar primero la tarifa (aunque esté vacía),
+porque así se tiene una plantilla del fichero Excel para su posterior importación</p>
+<p>Otra ventaja añadida de este asistente es que creará los prefijos definidos
+en el fichero Excel y que aún no existan en la aplicación.</p>
+<ul>
+<li><p class="first">Primero exporte la tarifa:</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_03.png"><img alt="../_images/proc_initial_03.png" class="align-center" src="../_images/proc_initial_03.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Descargue el fichero:</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_04.png"><img alt="../_images/proc_initial_04.png" class="align-center" src="../_images/proc_initial_04.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Ábralo:</p>
+<a class="reference internal image-reference" href="../_images/proc_rate_02.png"><img alt="../_images/proc_rate_02.png" class="align-center" src="../_images/proc_rate_02.png" style="width: 80%;" /></a>
+<div class="admonition important">
+<p class="first admonition-title">Importante</p>
+<p>La columna correspondiente a los prefijos debe ser de tipo carácter
+y tener el signo <cite>+</cite> delante. Para evitar que se interprete como un numérico
+(y no se guarde el signo <cite>+</cite>), quizás será necesario poner delante
+del <cite>+</cite> un apóstrofo <cite>“</cite>.</p>
+<p>Deben escribirse bien los tipos <cite>Type</cite>:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li><cite>nat</cite>: Nacional fijo</li>
+<li><cite>mob</cite>: Nacional móvil</li>
+<li><cite>int</cite>: Internacional</li>
+<li><cite>inb</cite>: 900 Entrante</li>
+<li><cite>oth</cite>: Red inteligente</li>
+</ul>
+</div></blockquote>
+</div>
+<p>Una vez especificados todos los prefijos, guarde el fichero.</p>
+</li>
+<li><p class="first">Vuelva a abrir el asistente (<strong class="rst_xmenu">ISP » Asistentes » Importar tarifas</strong>)</p>
+</li>
+<li><p class="first">Seleccione el fichero y haga clic en el botón <code class="rst_xgui docutils literal notranslate"><span class="pre">Comprobar</span> <span class="pre">archivo</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_05.png"><img alt="../_images/proc_initial_05.png" class="align-center" src="../_images/proc_initial_05.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Una vez comprobado, haga clic en el botón <code class="rst_xgui docutils literal notranslate"><span class="pre">Importar</span> <span class="pre">tarifas</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_06.png"><img alt="../_images/proc_initial_06.png" class="align-center" src="../_images/proc_initial_06.png" style="width: 80%;" /></a>
+</li>
+<li><p class="first">Una vez importado, vaya a <strong class="rst_xmenu">ISP » Ajustes » Prefijos » Nacional</strong> y verá
+que ha creado el prefijo <cite>+34</cite>.</p>
+</li>
+</ul>
+</dd>
+<dt>Crear productos (<strong class="rst_xmenu">ISP » Ajustes » Productos » Productos</strong>)</dt><dd><p>Se abrirá la ficha de producto:</p>
+<a class="reference internal image-reference" href="../_images/proc_initial_07.png"><img alt="../_images/proc_initial_07.png" class="align-center" src="../_images/proc_initial_07.png" style="width: 80%;" /></a>
+<p>Los campos más importantes relacionados con el vertical son los siguientes:</p>
+<ul>
+<li><p class="first"><code class="rst_xgui docutils literal notranslate"><span class="pre">Nombre</span> <span class="pre">del</span> <span class="pre">producto</span></code></p>
+</li>
+<li><p class="first"><code class="rst_xgui docutils literal notranslate"><span class="pre">Precio</span> <span class="pre">de</span> <span class="pre">venta</span></code></p>
+</li>
+<li><p class="first"><code class="rst_xgui docutils literal notranslate"><span class="pre">Descipción</span> <span class="pre">de</span> <span class="pre">ventas</span></code> (está en la pestaña <code class="rst_xgui docutils literal notranslate"><span class="pre">Ventas</span></code>)</p>
+</li>
+<li><p class="first"><code class="rst_xgui docutils literal notranslate"><span class="pre">Tipo</span> <span class="pre">ISP</span></code>:</p>
+<p>Debe definir correctamente el tipo de producto. El significado de los
+distintos tipos es el siguiente:</p>
+<ul class="simple">
+<li><cite>Fibra</cite>: Productos que se utilizarán en líneas de contrato de fibra.</li>
+<li><cite>Móvil</cite>: Productos que se utilizarán en líneas de contrato de móvil.</li>
+<li><cite>Línea Fija</cite>: Productos que se utilizarán en líneas de contrato de teléfono fijo.</li>
+<li><cite>Bono</cite>:  Productos que se utilizarán en líneas de contrato de bono.</li>
+<li><cite>Puntual</cite>: Productos que se utilizarán en líneas de contrato de cargos puntuales.
+Estos cargos solamente se facturan una vez (habitualmente en la siguiente factura
+mensual) y no tienen información de periodicidad de facturación.</li>
+<li><cite>Llamadas</cite>: Productos que se utilizarán en las líneas de detalle de las facturas de consumo.
+Habitualmente, cada tipo de llamada se corresponderá con una línea de detalle de consumo en la factura.</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../master/contrato.html#contrato-tipo"><span class="std std-ref">Tipos de contrato</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Tipos de contrato</strong>)</dt><dd><a class="reference internal image-reference" href="../_images/proc_initial_08.png"><img alt="../_images/proc_initial_08.png" class="align-center" src="../_images/proc_initial_08.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li>Edite el tipo de contrato creado por defecto durante la instalación para
+adaptarlo a las necesidades de la empresa.</li>
+<li>(Opcional) Crear nuevos tipos de contrato, si es necesario.</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../master/tarifa.html#tarifa-prefijo"><span class="std std-ref">Prefijos</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Prefijos</strong>)</dt><dd><p>Defina los prefijos necesarios. Cada tipo de prefijo se encuentra en
+un submenú de este menú:</p>
+<ul class="simple">
+<li>Nacional</li>
+<li>Móvil</li>
+<li>Internacional</li>
+<li>900 entrada</li>
+<li>Red inteligente</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../master/tarifa.html#tarifa-zona"><span class="std std-ref">Zonas</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Zonas</strong>)</dt><dd><ul class="simple">
+<li>Defina zonas. Será necesario definir antes los prefijos.</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../config/agreements.html#config-agreement"><span class="std std-ref">Acuerdos de contrato</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Acuerdos de contrato</strong>)</dt><dd><ul class="simple">
+<li>Cree como mínimo una plantilla de acuerdo de contrato.</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../master/llamadas.html#llamadas-perfiles"><span class="std std-ref">Perfiles de importación</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Perfiles de importación</strong>)</dt><dd><ul class="simple">
+<li>Cree un Perfil de importación por cada proveedor de ficheros CDR que se utilice.</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="factura.html#procedure-factura-perfil"><span class="std std-ref">Perfiles de facturación</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Perfiles de facturación</strong>)</dt><dd><ul>
+<li><p class="first">Modifique el Perfil de facturación creado por defecto durante la instalación
+para adaptarlo a las necesidades reales.</p>
+</li>
+<li><p class="first">(opcional) Crear nuevos perfiles de facturación.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si se utiliza la facturación automatizada (por <em>cron</em>), se utilizará
+el primer perfil activo de la lista. Los perfiles restantes solo se
+utilizarán como opciones en la facturación <em>manual</em> de contratos.</p>
+</div>
+</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="../config/vetoed.html#config-vetoed"><span class="std std-ref">Teléfonos vetados</span></a> (<strong class="rst_xmenu">ISP » Ajustes » Teléfonos vetados</strong>)</dt><dd><ul class="simple">
+<li>(Opcional) Defina los teléfonos cuyas llamadas se omitirán.</li>
+</ul>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../master/index.html">Modelos de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procedimientos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuración inicial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rate.html">Importar / exportar tarifas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus.html">Zonas y Bonos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Creación de contratos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recurso.html">Añadir recurso a un contrato</a></li>
+<li class="toctree-l2"><a class="reference internal" href="factura.html">Generar facturas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cdr.html">Importar CDR</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Procedimientos</a>
+        </li>
+        <li>
+          <a href="rate.html" title="Next document">Importar / exportar tarifas</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Procedimientos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>

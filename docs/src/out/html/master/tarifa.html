@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Prefijos, Tarifas, Bonos &#8212; EWAN ISP</title>
+    <link rel="stylesheet" href="../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Configuración" href="../config/index.html" />
+    <link rel="prev" title="Llamadas" href="llamadas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" />
+    <style type="text/css">
+        header#pageheader, footer#pagefooter, div.related, div.document {
+            max-width: 75rem;
+        }
+        dt {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .rst_xmenu {
+            font-weight: bold;
+            color: darkred;
+        }
+        .rst_xgui {
+            background-color: #FFFBE2;
+            padding: 2px 4px;
+            color: #000000;
+        }
+        img {
+            padding-bottom: 12px;
+        }
+        </style>
+  </head><body>
+    <header id="pageheader"><h1><a href="../index.html ">
+        EWAN ISP
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="llamadas.html" title="Previous document">Llamadas</a>
+        </li>
+        <li>
+          <a href="../config/index.html" title="Next document">Configuración</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="prefijos-tarifas-bonos">
+<h1>Prefijos, Tarifas, Bonos<a class="headerlink" href="#prefijos-tarifas-bonos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En esta sección se explican los modelos de datos de prefijos, tarifas, bonos
+y su interrelación para obtener precios de las llamadas:</p>
+<div class="section" id="prefijos">
+<span id="tarifa-prefijo"></span><h2>Prefijos<a class="headerlink" href="#prefijos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Prefijo</p>
+<p>A lo largo de este manual se utiliza el término <em>prefijo</em> para referirse
+a los primeros caracteres de un número de teléfono.</p>
+<p>Por ejemplo, dado el número de teléfono <strong>+34931234567</strong>, los siguientes
+elementos son <strong>prefijos</strong> del mismo:</p>
+<ul class="simple">
+<li>+34</li>
+<li>+349</li>
+<li>+3493</li>
+<li>+3493123</li>
+<li>etc.</li>
+</ul>
+<p class="last">Asimismo, la acción <em>buscar un prefijo</em>, con frecuencia se refiere a
+encontrar en una lista de prefijos el <em>prefijo</em> más largo que coincida
+con el número de teléfono dado. En el caso anterior, el <em>prefijo encontrado</em>
+sería <em>+3493123</em>, pero no <em>+349</em> (más corto) o un prefijo existente <em>+34932</em>
+(no empieza por los mismos caracteres).</p>
+</div>
+<p>En esta tabla se guardan los prefijos conocidos por la aplicación y que pueden
+asignarse a las tarifas.</p>
+<p>Los campos de esta tabla son los siguientes:</p>
+<dl class="docutils">
+<dt>Prefijo</dt><dd>Campo de texto donde se define el prefijo.</dd>
+<dt>Tipo de prefijo</dt><dd><p>Tipo de prefijo que también determinará el tipo de la llamada cuando se encuentre
+este prefijo. Los valores posibles son:</p>
+<ul class="simple">
+<li>Nacional fijo</li>
+<li>Nacional móvil</li>
+<li>Internacional</li>
+<li>900 Entrada</li>
+<li>Red inteligente</li>
+</ul>
+</dd>
+<dt>Destinación</dt><dd>Campo informativo que se muestra en el detalle de llamadas de las facturas.</dd>
+<dt>Activo</dt><dd>Solamente se buscarán prefijos que estén activos.</dd>
+</dl>
+</div>
+<div class="section" id="tarifas">
+<span id="tarifa-tarifa"></span><h2>Tarifas<a class="headerlink" href="#tarifas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las <cite>Tarifas</cite> permiten definir los precios de las llamadas de tipo <strong>VOZ</strong> y <strong>SMS</strong>.</p>
+<p>Existen dos tipos de tarifas:</p>
+<dl class="docutils">
+<dt>Ventas</dt><dd>Las tarifas de tipo venta calculan precios de venta al cliente.
+Cada <a class="reference internal" href="contrato.html#contrato-recurso"><span class="std std-ref">recurso</span></a> define la tarifa de venta que se
+aplicará a las llamadas realizadas por dicho recurso.</dd>
+<dt>Compras</dt><dd>Las tarifas de tipo compra calculan costes de las llamadas.
+Cada <a class="reference internal" href="llamadas.html#llamadas-perfiles"><span class="std std-ref">perfil de importación</span></a> define
+una tarifa de compra, que se aplicará en todas las llamadas importadas
+mediante dicho perfil.</dd>
+</dl>
+<p>Las tarifas están formadas por los siguientes modelos de datos o tablas:</p>
+<dl class="docutils">
+<dt>Tarifa</dt><dd>Básicamente define el nombre de la tarifa y el tipo (compra o venta).
+También define la unidad de medida (minutos o segundos) con la que se
+expresan los precios, a efectos de normalizar los segundos empleados
+en la duración de las llamadas y el precio de la tarifa, que puede estar
+referido a una unidad de medida diferente.</dd>
+<dt>Versión de tarifa</dt><dd><p>Cada tarifa puede tener varias versiones de tarifa.
+Define un intervalo de fechas de validez de la tarifa y si está activa.
+De este modo, es posible calcular precios de llamadas con la tarifa vigente en una fecha dada.</p>
+<p>Cada versión también define un margen de venta.
+Cuando los precios de las llamadas están definidos en los ficheros CDR,
+estos precios son precios de <strong>coste</strong> de las llamadas.
+Para calcular el precio de venta, se utiliza este margen porcentual.
+Al definirlo en la versión, es posible volver a validar llamadas y
+aplicar el margen vigente en una fecha dada. Solamente se aplica
+en llamadas con precios incluidos en el CDR. Para el resto de llamadas, se ignora.</p>
+</dd>
+<dt>Elemento de tarifa</dt><dd><p>Cada versión de tarifa puede tener varios elementos de tarifa.
+Define los coeficientes que se aplicarán para calcular el precio de una llamada,
+en función de la duración y el prefijo. Define los siguientes campos:</p>
+<ul class="simple">
+<li>Prefijo</li>
+<li>Precio</li>
+<li>SMS</li>
+<li>Precio establecimiento de llamada</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="calculo-de-precios">
+<span id="tarifa-calculo"></span><h3>Cálculo de precios<a class="headerlink" href="#calculo-de-precios" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El procedimiento que se sigue para el cálculo de precios de una llamada es el siguiente:</p>
+<ul>
+<li><p class="first">Durante la <a class="reference internal" href="llamadas.html#llamadas-validacion"><span class="std std-ref">validación de llamadas</span></a> se encuentra
+el prefijo y el elemento de tarifa aplicables.</p>
+</li>
+<li><p class="first">El cálculo del precio de una llamada de voz es el siguiente
+(p = precio, l = duración de la llamada, e = establecimiento de llamada):</p>
+<div class="math">
+<p><img src="../_images/math/8f4a8745c22af2baf5e41c265b543d677bde71b4.png" alt="(p * l) + e"/></p>
+</div></li>
+<li><p class="first">El cálculo del precio de una llamada de SMS no depende de ninga duración,
+por lo que el precio es directamente el valor del coeficiente SMS del elemento de tarifa.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="zonas">
+<span id="tarifa-zona"></span><h2>Zonas<a class="headerlink" href="#zonas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las <cite>Zonas</cite> son básicamente agrupaciones de prefixos.
+Una <cite>Zona</cite> está formada por un nombre y una lista de prefijos.</p>
+<p>Se utilizan en la definición de <a class="reference internal" href="#tarifa-bono"><span class="std std-ref">bonos</span></a>.
+Por ejemplo, es habitual definir bonos para una zona formada por prefijos de países europeos.</p>
+</div>
+<div class="section" id="bonos">
+<span id="tarifa-bono"></span><h2>Bonos<a class="headerlink" href="#bonos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los <cite>Bonos</cite> definen minutos (u otras unidades de tiempo) que se bonifican y
+no se cargan.</p>
+<p>Cada <a class="reference internal" href="contrato.html#contrato-recurso"><span class="std std-ref">recurso</span></a> (móvil o fijo) posee su propia lista de bonos.</p>
+<p>En los bonos pueden definirse los siguientes campos.</p>
+<dl class="docutils">
+<dt>Tipo de Bono</dt><dd><p>Indica en qué tipo de llamadas se aplicará el bono.
+Los valores son los mismos que los del <cite>Tipo CDR</cite> definidos en las <a class="reference internal" href="llamadas.html#llamadas-llamadas"><span class="std std-ref">llamadas</span></a>:</p>
+<ul class="simple">
+<li>VOZ</li>
+<li>SMS</li>
+<li>DATOS (habitualmente no se utiliza)</li>
+</ul>
+</dd>
+<dt>Destinaciones máximas</dt><dd>Indica el número de destinaciones distintas a las que puede llamar un teléfono.
+Sirve para evitar posibles usos fraudulentos en locutorios, etc.
+El valor por defecto es <cite>0</cite>, que significa <em>sin límite</em>.</dd>
+<dt>Zonas</dt><dd>Lista de las <a class="reference internal" href="#tarifa-zona"><span class="std std-ref">zonas</span></a> (prefijos) en los cuales se aplicará este bono.</dd>
+<dt>Duración máxima</dt><dd>Define el número de unidades de tiempo que entrarán en el bono.
+Por ejemplo, un bono con una duración máxima de <cite>1 minuto</cite> bonificará
+los primeros 60 segundos de llamadas efectuadas a prefijos comprendidos en la lista de zonas.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Los bonos se aplican en el momento de facturar las llamadas.
+El <em>contaje</em> de tiempo bonificable se realiza sobre el conjunto
+de llamadas asignadas a una factura.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Tabla de contenido</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Visión general</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modelos de datos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contrato.html">Contratos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llamadas.html">Llamadas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Prefijos, Tarifas, Bonos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prefijos">Prefijos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tarifas">Tarifas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zonas">Zonas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bonos">Bonos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configuración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedure/index.html">Procedimientos</a></li>
+</ul>
+<hr />
+<p>
+    <strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i></strong>
+    <a href="/ewan_isp/docs/pdf/ewan-isp.pdf">Versión PDF</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="llamadas.html" title="Previous document">Llamadas</a>
+        </li>
+        <li>
+          <a href="../config/index.html" title="Next document">Configuración</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">EWAN ISP</a></li>
+      <li>
+        <a href="index.html">Modelos de datos</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; EveryWAN 2019-2020, .
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      2.2.0.
+
+  </footer>
+
+  
+  </body>
+</html>
